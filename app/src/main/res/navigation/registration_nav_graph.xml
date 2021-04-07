@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/registration_nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/destination_registration_fragment">
+
+    <fragment
+        android:id="@+id/destination_registration_fragment"
+        android:name="com.logan.registration2.ui.main.RegistrationFragment"
+        tools:layout="@layout/registration_fragment">
+
+        <action
+            android:id="@+id/action_to_user_list"
+            app:destination="@id/destination_user_list_fragment">
+            <argument
+                android:name="name"
+                android:defaultValue=""
+                app:argType="string"/>
+            <argument
+                android:name="email"
+                android:defaultValue=""
+                app:argType="string"/>
+            <argument
+                android:name="username"
+                android:defaultValue=""
+                app:argType="string"/>
+            <argument
+                android:name="password"
+                android:defaultValue=""
+                app:argType="string"/>
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_user_list_fragment"
+        android:name="com.logan.registration2.ui.main.UserListFragment"
+        tools:layout="@layout/user_list_fragment">
+
+        <argument
+            android:name="name"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="email"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="username"
+            android:defaultValue=""
+            app:argType="string"/>
+        <argument
+            android:name="password"
+            android:defaultValue=""
+            app:argType="string"/>
+    </fragment>
+
+</navigation>
